@@ -85,7 +85,7 @@ const buystt = async () => {
 	}
 
   let ethval = document.getElementById("buyinput").value;
-  if(ethval >= 0.01){
+  if(ethval >= 0.0001){
   ethval = Number(ethval) * 1e18;
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
@@ -97,7 +97,7 @@ const buystt = async () => {
   }else{
     Swal.fire(
   'Buy Alert',
-  'Buy as low as 0.01 BNB.',
+  'Buy as low as 0.0001 BNB.',
   'error'
 )
   }
@@ -182,10 +182,10 @@ function addToWallet() {
     web3.currentProvider.sendAsync({
       method: 'wallet_watchAsset',
       params: {
-        'type': 'ERC20',
+        'type': 'BEP20',
         'options': {
           'address': '0x405A09ea9a1F1d18ebdEF253810eF41458f12A6D',
-          'symbol': '$CR7',
+          'symbol': 'TBUR',
           'decimals': '18',
           'image': 'https://crsevendao.xyz/fonts/crlogo.jpg',
         },
