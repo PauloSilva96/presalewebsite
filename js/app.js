@@ -85,7 +85,7 @@ const buystt = async () => {
 	}
 
   let ethval = document.getElementById("buyinput").value;
-  if(ethval >= 0.01){
+  if(ethval >= 0.0001){
   ethval = Number(ethval) * 1e18;
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
@@ -97,7 +97,7 @@ const buystt = async () => {
   }else{
     Swal.fire(
   'Buy Alert',
-  'Buy as low as 0.01 BNB.',
+  'Buy as low as 0.0001 BNB.',
   'error'
 )
   }
