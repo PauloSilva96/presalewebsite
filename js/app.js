@@ -1,4 +1,4 @@
-let web3 = new web3js.myweb3(window.ethereum);
+let web3;
 let addr;
 const bscRpcUrl = "https://rpc.polysplit.cloud/v1/chain/56";
 const sttaddr = "0x405A09ea9a1F1d18ebdEF253810eF41458f12A6D";
