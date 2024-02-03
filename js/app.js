@@ -57,47 +57,6 @@ const buystt = async () => {
   }
 }
 
-const cooldowncheck = async () => {
-  let blocknumber = await currentblock();
-  let last = await lastblock();
-
-
-  if(blocknumber - last < 50) {
-    console.log(blocknumber, last);
-    let waittime = 50 + last - blocknumber;
-    console.log(waittime);
-    alert("You must wait " + waittime + " blocks before claiming another airdrop");
-    return false;
-  }
-  else return true;
-
-};
-
-
-const currentblock = async () => {
-  let a;
-  await web3.eth.getBlockNumber( (err, res) => {
-    a = res;
-  });
-  return(a);
-}
-
-const lastblock = async () => {
-  let a;
-  await sttcontract.methods.lastairdrop(addr).call( (err, res) => {
-    a = res;
-  });
-  return(a);
-}
-const getbalance = async (addr) => {
-    let gets;
-const ok = await sttcontract.methods.balanceOf(addr).call( (err, res) => {
-    gets = res;
-  });
-   return Promise.resolve(gets);
-}
-
-
 window.onload=function(){
 
   function querySt(ji) {
